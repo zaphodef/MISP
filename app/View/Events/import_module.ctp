@@ -3,6 +3,9 @@
     <fieldset>
         <legend><?php echo h(Inflector::humanize($module['name']));?></legend>
         <?php
+            if (isset($module['mispattributes']['description']) && !empty($module['mispattributes']['description'])) {
+                echo '<p>'.$module['mispattributes']['description'].'</p>';
+            }
             if (isset($module['mispattributes']['userConfig']) && !empty($module['mispattributes']['userConfig'])) {
                 foreach ($module['mispattributes']['userConfig'] as $configName => $config) {
                     $settings = array(
